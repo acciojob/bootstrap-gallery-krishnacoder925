@@ -1,16 +1,124 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-	<link rel="stylesheet" href="styles.css">
-</head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cards Gallery</title>
 
-<body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+  <!-- Bootstrap CSS -->
+  <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
+    rel="stylesheet">
+
+  <style>
+    .card img {
+      border-radius: 10px;
+      cursor: pointer;
+      transition: transform 0.2s ease-in-out;
+    }
+    .card img:hover {
+      transform: scale(1.05);
+    }
+    .card {
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body class="bg-light py-5">
+
+  <div class="container text-center">
+    <h2 class="mb-5">Cards Gallery</h2>
+
+    <div class="row g-4">
+      <!-- Card 1 -->
+      <div class="col-md-4 col-sm-6">
+        <div class="card shadow-sm">
+          <img src="https://via.placeholder.com/400x250?text=Image1" class="card-img-top" alt="Image1" data-bs-toggle="modal" data-bs-target="#lightboxModal" onclick="showImage(this)">
+          <div class="card-body">
+            <h6 class="card-title text-center">Beautiful Landscape</h6>
+            <p class="card-text text-center">A stunning view of nature captured at sunrise.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-4 col-sm-6">
+        <div class="card shadow-sm">
+          <img src="https://via.placeholder.com/400x250?text=Image2" class="card-img-top" alt="Image2" data-bs-toggle="modal" data-bs-target="#lightboxModal" onclick="showImage(this)">
+          <div class="card-body">
+            <h6 class="card-title text-center">City Lights</h6>
+            <p class="card-text text-center">A vibrant city glowing under the night sky.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-4 col-sm-6">
+        <div class="card shadow-sm">
+          <img src="https://via.placeholder.com/400x250?text=Image3" class="card-img-top" alt="Image3" data-bs-toggle="modal" data-bs-target="#lightboxModal" onclick="showImage(this)">
+          <div class="card-body">
+            <h6 class="card-title text-center">Ocean Breeze</h6>
+            <p class="card-text text-center">Experience the calm and freshness of the sea.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-md-4 col-sm-6">
+        <div class="card shadow-sm">
+          <img src="https://via.placeholder.com/400x250?text=Image4" class="card-img-top" alt="Image4" data-bs-toggle="modal" data-bs-target="#lightboxModal" onclick="showImage(this)">
+          <div class="card-body">
+            <h6 class="card-title text-center">Mountain Adventure</h6>
+            <p class="card-text text-center">Explore the thrilling heights of rocky mountains.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="col-md-4 col-sm-6">
+        <div class="card shadow-sm">
+          <img src="https://via.placeholder.com/400x250?text=Image5" class="card-img-top" alt="Image5" data-bs-toggle="modal" data-bs-target="#lightboxModal" onclick="showImage(this)">
+          <div class="card-body">
+            <h6 class="card-title text-center">Forest Path</h6>
+            <p class="card-text text-center">A peaceful trail leading through the deep forest.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="col-md-4 col-sm-6">
+        <div class="card shadow-sm">
+          <img src="https://via.placeholder.com/400x250?text=Image6" class="card-img-top" alt="Image6" data-bs-toggle="modal" data-bs-target="#lightboxModal" onclick="showImage(this)">
+          <div class="card-body">
+            <h6 class="card-title text-center">Desert Dunes</h6>
+            <p class="card-text text-center">Golden sands stretching endlessly under the sun.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div class="modal fade" id="lightboxModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content bg-transparent border-0">
+        <div class="modal-body text-center">
+          <img id="lightboxImage" src="" class="img-fluid rounded shadow" alt="Expanded view">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Show clicked image in modal
+    function showImage(element) {
+      const modalImg = document.getElementById('lightboxImage');
+      modalImg.src = element.src;
+    }
+  </script>
 
 </body>
-
 </html>
